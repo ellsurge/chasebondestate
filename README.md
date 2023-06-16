@@ -39,6 +39,10 @@ To interact with Sanity.io, you need to set up a Sanity project. Follow these st
 6. You may be prompted to setup CORS so just follow the prompts.
 7. You can now add content to your Sanity project and it will be available in your Next.js application.
 
+## Draft Mode (Previously _Preview Mode_)
+
+There are two API routes for entering and leaving preview mode. These are `/api/preview` and `/api/preview-exit`. These routes are used by the Sanity Studio to enter and leave preview mode. You can also use these routes to enter and leave preview mode manually.
+
 ## Building for Production
 
 To create a production build of your application, run `yarn run build`. The output will be in the `.next/` directory.
