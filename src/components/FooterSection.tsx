@@ -2,12 +2,12 @@ import React from 'react';
 
 export default function FooterSection() {
   return (
-    <footer className="bg-light text-foreground py-8 border-t border-border">
+    <footer className="bg-white text-foreground py-8 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Company Logo / Title */}
           <div className="mb-4 md:mb-0">
-            <h1 className="text-xl font-light text-dark sans ">powered by vbyte</h1>
+            <h1 className="text-xl font-normal text-dark title ">powered by vbyte</h1>
           </div>
 
           {/* Links */}
