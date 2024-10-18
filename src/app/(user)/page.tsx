@@ -1,23 +1,46 @@
 import { draftMode } from "next/headers";
 import PreviewSuspense from "@/components/PreviewSuspense";
-import { DocumentsCount, query } from "@/components/DocumentsCount";
+import { DocumentsCount } from "@/components/DocumentsCount";
 import PreviewDocumentsCount from "@/components/PreviewDocumentsCount";
 import { client } from "@/lib/sanity.client";
 import { cache } from "react";
+import HeroSection from "@/components/HeroSection";
+import ProductSection from "@/components/ProductsSection";
+import { InsentiveSection } from "@/components/InsentiveSection";
+import ContactSection from "@/components/ContactSection";
+import FooterSection from "@/components/FooterSection";
+import MapSection from "@/components/MapSection";
 
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
 
 export default async function IndexPage() {
-  const { isEnabled } = draftMode();
-  if (isEnabled) {
-    return (
-      <PreviewSuspense fallback="Loading...">
-        <PreviewDocumentsCount />
-      </PreviewSuspense>
-    );
-  }
-
+  // const { isEnabled } = draftMode();
+  // if (isEnabled) {
+  //   return (
+  //     <PreviewSuspense fallback="Loading...">
+  //       <HeroSection />
+  //       <ProductSection/>
+  //       {/* <PreviewDocumentsCount /> */}
+  //     </PreviewSuspense>
+  //   );
+  // }
+const  query = '*[_type == "property" && featured == true]'
+const  bioQuery = '*[_type == "bio" ]'
   const data = await clientFetch(query);
-  return <DocumentsCount data={data} />;
+  const biodata = await clientFetch(bioQuery);
+  return (
+    <>
+          <PreviewSuspense fallback="Loading...">
+        <HeroSection />
+        <ProductSection data={data}/>
+        {/* <PreviewDocumentsCount /> */}
+    </PreviewSuspense>
+      <InsentiveSection />
+      <ContactSection />
+      <MapSection center={biodata[0].location} />
+
+      <FooterSection/>
+      </>
+  );
 }

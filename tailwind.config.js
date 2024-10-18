@@ -25,6 +25,10 @@ module.exports = {
         roboto: ["var(--font-roboto)", ...fontFamily.sans],
       },
       colors: {
+        dark: '#3c413d',
+        green: '#7c9055',
+        light: '#e8eadd',
+        gray: '#aaaaaa',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

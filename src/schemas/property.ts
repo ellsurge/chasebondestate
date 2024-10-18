@@ -10,6 +10,16 @@ export default defineType({
       title: "Title",
       type: "string",
     }),
+        defineField({
+      name: "featured",
+      title: "featured",
+      type: 'boolean',
+        }),
+                defineField({
+      name: "label",
+      title: "label",
+      type: 'string',
+    }),
     defineField({
       name: "slug",
       title: "Slug",
@@ -56,11 +66,11 @@ export default defineType({
       name: "tags",
       title: "Tags",
       type: "array",
-      of: [
-        {
-          type: "string",
-        },
-      ],
+      // of: [
+      //   {
+      //     type: "string",
+      //   },
+      // ],
       options: {
         layout: "tags",
       },
