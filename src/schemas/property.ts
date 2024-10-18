@@ -10,15 +10,15 @@ export default defineType({
       title: "Title",
       type: "string",
     }),
-        defineField({
+    defineField({
       name: "featured",
       title: "featured",
-      type: 'boolean',
-        }),
-                defineField({
+      type: "boolean",
+    }),
+    defineField({
       name: "label",
       title: "label",
-      type: 'string',
+      type: "string",
     }),
     defineField({
       name: "slug",
@@ -74,6 +74,19 @@ export default defineType({
       options: {
         layout: "tags",
       },
+    }),
+    defineField({
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
     }),
   ],
   preview: {

@@ -1,8 +1,7 @@
 import { urlFor } from "@/lib/utils";
 import React, { useState } from "react";
 
-const HeroSection = ({ data }: any) => {
-  console.log(data, "fffffffffff");
+const HeroSection = ({ data, home = false }: any) => {
   return (
     <section>
       <header className="bg-white">
@@ -93,30 +92,32 @@ const HeroSection = ({ data }: any) => {
         </div>
       </header>
 
-      <div className="relative py-12 bg-light sm:py-16 lg:py-20">
-        <div className="absolute inset-0">
-          <img
-            className="object-cover object-right  w-full h-full lg:object-center"
-            src={urlFor(data?.mainImage)?.url()}
-            alt=""
-          />
-        </div>
+      {home && (
+        <div className="relative py-12 bg-light sm:py-16 lg:py-20">
+          <div className="absolute inset-0">
+            <img
+              className="object-cover object-right  w-full h-full lg:object-center"
+              src={urlFor(data?.mainImage)?.url()}
+              alt=""
+            />
+          </div>
 
-        <div className="absolute inset-0 bg-dark bg-opacity-80"></div>
-        <br className="hidden md:flex" />
+          <div className="absolute inset-0 bg-dark bg-opacity-80"></div>
+          <br className="hidden md:flex" />
 
-        <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-lg mx-auto text-center xl:max-w-2xl">
-            <h1 className="text-3xl font-extrabold leading-normal sans text-white sm:text-4xl xl:text-5xl ">
-              Find Your Dream Property & Invest in Land with Confidence
-            </h1>
-            <p className="max-w-lg  mt-6 text-base sans mx-auto font-light leading-7 text-light">
-              From luxurious homes to prime land parcels, we bring you closer to
-              your next great investment. Discover opportunities in real estate
-              that are designed to suit your lifestyle and financial goals.
-            </p>
+          <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+            <div className="max-w-lg mx-auto text-center xl:max-w-2xl">
+              <h1 className="text-3xl font-extrabold leading-normal sans text-white sm:text-4xl xl:text-5xl ">
+                Find Your Dream Property & Invest in Land with Confidence
+              </h1>
+              <p className="max-w-lg  mt-6 text-base sans mx-auto font-light leading-7 text-light">
+                From luxurious homes to prime land parcels, we bring you closer
+                to your next great investment. Discover opportunities in real
+                estate that are designed to suit your lifestyle and financial
+                goals.
+              </p>
 
-            {/* <form action="#" className="max-w-xl mx-auto mt-10">
+              {/* <form action="#" className="max-w-xl mx-auto mt-10">
                     <div>
                         <label className="sr-only"> Search </label>
                         <div className="relative">
@@ -157,8 +158,8 @@ const HeroSection = ({ data }: any) => {
                         </button>
                     </div>
                 </form> */}
-            <br className="hidden md:flex" />
-            {/* <div className="grid max-w-md grid-cols-2 mx-auto mt-8 md:mt-16 lg:mt-24 xl:mt-32 gap-x-6 grid-col-2">
+              <br className="hidden md:flex" />
+              {/* <div className="grid max-w-md grid-cols-2 mx-auto mt-8 md:mt-16 lg:mt-24 xl:mt-32 gap-x-6 grid-col-2">
                     <div>
                         <p className="text-4xl font-bold text-white">38,942</p>
                         <p className="mt-2 text-sm font-medium text-gray-300">Order Delivered</p>
@@ -169,9 +170,10 @@ const HeroSection = ({ data }: any) => {
                         <p className="mt-2 text-sm font-medium text-gray-300">Registered Customers</p>
                     </div>
                 </div> */}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };

@@ -36,7 +36,7 @@ export default async function IndexPage() {
   return (
     <>
       <PreviewSuspense fallback={<Preloader />}>
-        <HeroSection data={biodata[0]} />
+        <HeroSection data={biodata[0]} home />
         <ProductSection data={data} />
         {/* <PreviewDocumentsCount /> */}
         <InsentiveSection />

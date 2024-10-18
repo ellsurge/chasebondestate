@@ -8,6 +8,7 @@ export type Product = {
   bedrooms: number;
   description: string;
   label: string;
+  slug: { current: string; _type: "slug" };
 };
 
 interface ProductSectionProps {
@@ -15,6 +16,7 @@ interface ProductSectionProps {
 }
 
 const ProductSection = ({ data }: ProductSectionProps) => {
+  console.log(data);
   return (
     <section className="py-12 bg-white sm:py-16 lg:py-20">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -46,7 +48,10 @@ const ProductSection = ({ data }: ProductSectionProps) => {
               )}
               <div className="mt-4 space-y-1">
                 <h3 className="md:text-2xl text-base title font-light text-dark">
-                  <a href="#" title={item.title}>
+                  <a
+                    href={`/property/${item?.slug?.current}`}
+                    title={item.title}
+                  >
                     {item.title}
                     <span
                       className="absolute inset-0"
@@ -74,14 +79,14 @@ const ProductSection = ({ data }: ProductSectionProps) => {
         </div>
 
         {/* Centered View All Button */}
-        <div className="flex justify-center mt-8">
+        {/* <div className="flex justify-center mt-8">
           <button
             type="button"
             className="text-white bg-gradient-to-br from-dark to-green hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             View All
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
