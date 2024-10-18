@@ -6,6 +6,7 @@ export default defineType({
     type: 'document',
     title: 'bio',
     fields: [
+    
         {
             name: 'phone',
             title: 'phone',
@@ -20,6 +21,14 @@ export default defineType({
       name: "location",
       title: "Location",
       type: "geopoint",
-    },
+        },
+                    {
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    }
     ]
 })

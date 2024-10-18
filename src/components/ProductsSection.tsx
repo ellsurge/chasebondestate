@@ -1,13 +1,13 @@
-import { urlFor } from '@/lib/utils';
-import React from 'react';
+import { urlFor } from "@/lib/utils";
+import React from "react";
 
 export type Product = {
   mainImage: any;
   title: string;
   price: number;
   bedrooms: number;
-    description: string;
-    label: string;
+  description: string;
+  label: string;
 };
 
 interface ProductSectionProps {
@@ -37,21 +37,35 @@ const ProductSection = ({ data }: ProductSectionProps) => {
                   alt={item.title}
                 />
               </div>
-                  {item.label && <div className="absolute left-3 top-3">
-                      <p className="sm:px-3 sm:py-1.5 px-1.5 py-1 text-[8px] sm:text-xs font-normal tracking-wide text-dark uppercase bg-light  rounded-full sans">{item.label }</p>
-                  </div>}
+              {item.label && (
+                <div className="absolute left-3 top-3">
+                  <p className="sm:px-3 sm:py-1.5 px-1.5 py-1 text-[8px] sm:text-xs font-normal tracking-wide text-dark uppercase bg-light  rounded-full sans">
+                    {item.label}
+                  </p>
+                </div>
+              )}
               <div className="mt-4 space-y-1">
                 <h3 className="md:text-2xl text-base title font-light text-dark">
                   <a href="#" title={item.title}>
                     {item.title}
-                    <span className="absolute inset-0" aria-hidden="true"></span>
+                    <span
+                      className="absolute inset-0"
+                      aria-hidden="true"
+                    ></span>
                   </a>
                 </h3>
                 <p className="text-sm font-normal gap-4 sans text-green flex divide-x">
-                  <span>₦ {item.price}</span>
-                  <span className='pl-4'>{item.bedrooms} Bedrooms</span>
+                  {item?.price && (
+                    <span>₦ {item?.price?.toLocaleString()}</span>
+                  )}
+                  {item.bedrooms && (
+                    <span className="pl-4">{item.bedrooms} Bedrooms</span>
+                  )}
                 </p>
-                <p className="text-xs text-gray truncate sans" title={item.description}>
+                <p
+                  className="text-xs text-gray truncate sans"
+                  title={item.description}
+                >
                   {item.description}
                 </p>
               </div>
