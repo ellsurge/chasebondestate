@@ -1,4 +1,4 @@
-const ContactSection = () => {
+const ContactSection = ({ data }: any) => {
   return (
     <div id="contact" className="bg-dark">
       <div className="grid sm:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-6xl py-24 sans">
@@ -6,12 +6,12 @@ const ContactSection = () => {
           <h1 className="text-light text-3xl font-light title ">
             Let&apos;s Talk
           </h1>
-          <p className="text-sm text-green mt-4 font-light">
+          {/* <p className="text-sm text-green mt-4 font-light">
             Have some big idea or brand to develop and need help? Then reach out
             we&apos;d love to hear about your project and provide help.
-          </p>
+          </p> */}
 
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <h2 className="text-light text-2xl font-light title ">Email</h2>
 
             <a
@@ -20,12 +20,34 @@ const ContactSection = () => {
             >
               info@example.com
             </a>
-          </div>
+          </div> */}
 
           <div className="mt-8">
             <h2 className="text-light text-2xl font-light title">Socials</h2>
-
-            <ul className="flex mt-4 space-x-4">
+            <div className="flex items-center gap-2">
+              <a
+                href={`tel:+${data?.phone}`}
+                className="text-xs text-gray truncate sans mt-3"
+                title={data?.phone}
+              >
+                {data?.phone}
+              </a>
+              <a
+                href={`tel:+${data?.phone2}`}
+                className="text-xs text-gray truncate sans mt-3"
+                title={data?.phone2}
+              >
+                {data?.phone2}
+              </a>
+              <a
+                href={`tel:+${data?.phone3}`}
+                className="text-xs text-gray truncate sans mt-3"
+                title={data?.phone3}
+              >
+                {data?.phone3}
+              </a>
+            </div>
+            {/* <ul className="flex mt-4 space-x-4">
               <li className="bg-light h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                 <a href="javascript:void(0)">
                   <svg
@@ -71,7 +93,7 @@ const ContactSection = () => {
                   </svg>
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
 

@@ -6,6 +6,7 @@ import React, { cache, useState } from "react";
 import FooterSection from "@/components/FooterSection";
 import { urlFor } from "@/lib/utils";
 import DetailSection from "@/components/DetailSection";
+import ContactSection from "@/components/ContactSection";
 
 // Enable NextJS to cache and dedupe queries
 
@@ -24,6 +25,7 @@ const SingleProduct = async ({ params }: { params: { houseId: string } }) => {
       <PreviewSuspense fallback={<Preloader />}>
         <HeroSection data={biodata[0]} />
         <DetailSection propertyData={propertyData} data={biodata[0]} />
+        <ContactSection data={biodata[0]} />
         <FooterSection />
       </PreviewSuspense>
     </>

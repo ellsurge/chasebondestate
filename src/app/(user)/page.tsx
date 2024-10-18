@@ -41,7 +41,7 @@ export default async function IndexPage() {
         {/* <PreviewDocumentsCount /> */}
         <InsentiveSection />
         <ImageGrid data={imgdata[0].images} />
-        <ContactSection />
+        <ContactSection data={biodata[0]} />
         <MapSection center={biodata[0].location} />
 
         <FooterSection />
