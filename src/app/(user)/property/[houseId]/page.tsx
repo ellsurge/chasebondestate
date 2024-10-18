@@ -14,6 +14,7 @@ const clientFetch = cache(client.fetch.bind(client));
 const SingleProduct = async ({ params }: { params: { houseId: string } }) => {
   const slug = params.houseId;
   const bioQuery = '*[_type == "bio" ]';
+
   const biodata = await clientFetch(bioQuery);
   const propertyQuery = `*[_type == "property" && slug.current == $slug]`;
   const propertyData = await clientFetch(propertyQuery, { slug });
@@ -22,7 +23,7 @@ const SingleProduct = async ({ params }: { params: { houseId: string } }) => {
     <>
       <PreviewSuspense fallback={<Preloader />}>
         <HeroSection data={biodata[0]} />
-        <DetailSection propertyData={propertyData} />
+        <DetailSection propertyData={propertyData} data={biodata[0]} />
         <FooterSection />
       </PreviewSuspense>
     </>

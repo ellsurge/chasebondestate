@@ -72,7 +72,7 @@ const HeroSection = ({ data, home = false }: any) => {
 
             <div className="md:flex items-center justify-end ml-auto space-x-2 sm:space-x-5 hidden ">
               <a
-                href="#"
+                href={`tel:+${data?.phone}`}
                 title=""
                 className="text-sm sans font-light text-gray-900 transition-all duration-200 rounded hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
               >
@@ -80,13 +80,29 @@ const HeroSection = ({ data, home = false }: any) => {
                 {data?.phone}
               </a>
               <a
+                href={`tel:+${data?.phone2}`}
+                title=""
+                className="text-sm sans font-light text-gray-900 transition-all duration-200 rounded hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+              >
+                {" "}
+                {data?.phone2}
+              </a>
+              <a
+                href={`tel:+${data?.phone3}`}
+                title=""
+                className="text-sm sans font-light text-gray-900 transition-all duration-200 rounded hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+              >
+                {" "}
+                {data?.phone3}
+              </a>
+              {/* <a
                 href="#"
                 title=""
                 className="text-sm sans font-light text-gray-900 transition-all duration-200 rounded hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
               >
                 {" "}
                 {data?.email}{" "}
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
