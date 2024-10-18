@@ -1,6 +1,7 @@
+import { urlFor } from '@/lib/utils';
 import React, { useState } from 'react';
 
-const HeroSection = () => {        
+const HeroSection = ({data}:any) => {        
     return (
         <section>
     <header className="bg-white">
@@ -32,8 +33,8 @@ const HeroSection = () => {
 
                 <div className="md:flex items-center justify-end ml-auto space-x-2 sm:space-x-5 hidden ">
  
-                            <a href="#" title="" className="text-sm sans font-light text-gray-900 transition-all duration-200 rounded hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"> +234 90945654 43 4343 4 </a>
-                                                <a href="#" title="" className="text-sm sans font-light text-gray-900 transition-all duration-200 rounded hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"> no 12 opposite somwhere drive  </a>
+                            <a href="#" title="" className="text-sm sans font-light text-gray-900 transition-all duration-200 rounded hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"> {data.phone }</a>
+                                                <a href="#" title="" className="text-sm sans font-light text-gray-900 transition-all duration-200 rounded hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"> {data.email}  </a>
                 </div>
             </div>
         </div>
@@ -41,7 +42,7 @@ const HeroSection = () => {
 
     <div className="relative py-12 bg-light sm:py-16 lg:py-20">
         <div className="absolute inset-0">
-            <img className="object-cover object-right  w-full h-full lg:object-center" src="/view/cover-1.jpg" alt="" />
+            <img className="object-cover object-right  w-full h-full lg:object-center" src={urlFor(data.mainImage).url()} alt="" />
         </div>
 
         <div className="absolute inset-0 bg-dark bg-opacity-80"></div>

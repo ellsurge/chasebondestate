@@ -49,7 +49,7 @@ const ProductSection = ({ data }: ProductSectionProps) => {
                 </h3>
                 <p className="text-sm font-normal gap-4 sans text-green flex divide-x">
                   <span>₦ {item.price}</span>
-                  <span className='pl-4'>{item.bedrooms} Bedrooms</span>
+                  {item.bedrooms &&<span className='pl-4'>{item.bedrooms} Bedrooms</span>}
                 </p>
                 <p className="text-xs text-gray truncate sans" title={item.description}>
                   {item.description}

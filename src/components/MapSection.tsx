@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { googleApi } from '@/lib/sanity.client';
 
 const containerStyle = {
   width: '100%',
@@ -19,7 +20,7 @@ const defaultZoom = 10;
 function MyComponent({ center = defaultCenter, zoom = defaultZoom }) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao',
+    googleMapsApiKey: googleApi,
   });
 
   const [map, setMap] = React.useState(null);
