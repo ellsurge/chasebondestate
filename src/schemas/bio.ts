@@ -16,10 +16,10 @@ export default defineType({
             title: 'email',
             type: 'string',
         },
-                    defineField({
+                    {
       name: "location",
       title: "Location",
       type: "geopoint",
-    }),
+    },
     ]
 })

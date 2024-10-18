@@ -7,8 +7,8 @@ const ContactSection = () => {
         <div className="bg-dark">
         <div className="grid sm:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-6xl py-24 sans">
             <div>
-                <h1 className="text-light text-3xl font-light title ">Let's Talk</h1>
-                <p className="text-sm text-green mt-4 font-light">Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project  and provide help.</p>
+                <h1 className="text-light text-3xl font-light title ">Let&apos;s Talk</h1>
+                <p className="text-sm text-green mt-4 font-light">Have some big idea or brand to develop and need help? Then reach out we&apos;d love to hear about your project  and provide help.</p>
 
                 <div className="mt-8">
                     <h2 className="text-light text-2xl font-light title ">Email</h2>
