@@ -10,6 +10,7 @@ import { InsentiveSection } from "@/components/InsentiveSection";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import MapSection from "@/components/MapSection";
+import Preloader from "@/components/Preloader";
 
 // Enable NextJS to cache and dedupe queries
 const clientFetch = cache(client.fetch.bind(client));
@@ -25,22 +26,22 @@ export default async function IndexPage() {
   //     </PreviewSuspense>
   //   );
   // }
-const  query = '*[_type == "property" && featured == true]'
-const  bioQuery = '*[_type == "bio" ]'
+  const query = '*[_type == "property" && featured == true]';
+  const bioQuery = '*[_type == "bio" ]';
   const data = await clientFetch(query);
   const biodata = await clientFetch(bioQuery);
   return (
     <>
-          <PreviewSuspense fallback="Loading...">
+      <PreviewSuspense fallback={<Preloader />}>
         <HeroSection />
-        <ProductSection data={data}/>
+        <ProductSection data={data} />
         {/* <PreviewDocumentsCount /> */}
-    </PreviewSuspense>
-      <InsentiveSection />
-      <ContactSection />
-      <MapSection center={biodata[0].location} />
+        <InsentiveSection />
+        <ContactSection />
+        <MapSection center={biodata[0].location} />
 
-      <FooterSection/>
-      </>
+        <FooterSection />
+      </PreviewSuspense>
+    </>
   );
 }
