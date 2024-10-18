@@ -13,8 +13,8 @@ const DetailSection = ({ propertyData, data }: any) => {
     setSelectedImage(null); // Close the full-screen view
   };
   return (
-    <div className="w-full container px-4 flex gap-6 mb-10">
-      <div className="flex flex-col items-start max-w-3xl w-1/2 relative group">
+    <div className="w-full container px-4 flex flex-col md:flex-row gap-6 mb-10">
+      <div className="flex flex-col items-start max-w-3xl md:w-1/2 w-full relative group">
         <h1 className="text-xl">{propertyData?.[0]?.title}</h1>
         <img
           src={urlFor(propertyData?.[0]?.mainImage)?.url()}
@@ -28,7 +28,7 @@ const DetailSection = ({ propertyData, data }: any) => {
             </p>
           </div>
         )}
-        <div className="flex mt-4 space-x-2">
+        <div className="flex mt-4 gap-3 md:space-x-2 flex-wrap">
           {propertyData?.[0]?.images &&
             propertyData?.[0]?.images?.map((image: any, index: any) => (
               <>
@@ -46,7 +46,7 @@ const DetailSection = ({ propertyData, data }: any) => {
         </div>
       </div>
       {propertyData?.[0]?.label.toLowerCase() !== "land" && (
-        <div className="flex flex-col gap-6 w-1/3">
+        <div className="flex flex-col gap-6 w-full md:w-1/3">
           <h2>{propertyData?.[0]?.title}</h2>
           {propertyData?.[0]?.bedrooms && (
             <span className="">{propertyData?.[0]?.bedrooms} Bedrooms</span>
@@ -63,7 +63,7 @@ const DetailSection = ({ propertyData, data }: any) => {
         </div>
       )}
       {propertyData?.[0]?.label.toLowerCase() === "land" && (
-        <div className="flex flex-col gap-6 w-1/3">
+        <div className="flex flex-col gap-6 w-full md:w-1/3">
           <h2>{propertyData?.[0]?.title}</h2>
           <div className="gap-3">
             <h1>This Land is for Sale </h1>
